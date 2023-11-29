@@ -12,12 +12,13 @@
     <table>
       <tr><th>Código</th><th>Nombre</th><th>Estatura</th><th>Edad</th><th>Localidad</th></tr>
     <%
-//                                                              v----RECOGER listado DE SOCIO DEL request --%>
+//                                                              v----RECOGER listado DE SOCIO DEL request --
         List<Socio> listado = (List<Socio>) request.getAttribute("listado");
 
-//      FOR-EACH SOBRE LA COLECCIÓN DE listado DE SOCIO--%>
+//      FOR-EACH SOBRE LA COLECCIÓN DE listado DE SOCIO
+
         for(Socio socio: listado) {
-          %>
+        %>
       <tr>
 <%--           v--- EXPRESIÓN ACCEDIENDO A LOS VALORES DE SOCIO--%>
         <td><%=socio.getSocioId() %>

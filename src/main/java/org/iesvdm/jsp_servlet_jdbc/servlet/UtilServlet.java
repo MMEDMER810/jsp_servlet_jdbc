@@ -8,7 +8,23 @@ import java.util.Optional;
 
 public class UtilServlet {
 
-    public static Optional<Socio> validaGrabar(HttpServletRequest request) {
+    public static Optional<Socio> validaEditar(HttpServletRequest request) {
+
+        Optional<Socio> optionalSocio = UtilServlet.validaGrabar(request);
+
+        if (optionalSocio.isPresent()) {
+            Socio socio = optionalSocio.get();
+            try {
+                socio.setSocioId(Integer.parseInt(request.getParameter("socioID")));
+                return optionalSocio;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return Optional.empty();
+    }
+
+        public static Optional<Socio> validaGrabar(HttpServletRequest request) {
 
         //CÓDIGO DE VALIDACIÓN
         boolean valida = true;
