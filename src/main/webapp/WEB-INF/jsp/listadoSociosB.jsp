@@ -20,7 +20,10 @@
 
 <div class="container bg-white sticky-top">
     <div class="row mb-2 border-bottom">
-        <div class="col-md-12 h1">Listado de Socios</div>
+        <div class="col-md-8 h1">Listado de Socios</div>
+        <div class="col-md-4 align-self-center" ><form method="get" action="GrabarSociosServlet">
+            <input class="btn btn-primary"  type="submit" value="Crear Socio">
+        </form></div>
     </div>
     <div class="row">
         <div class="col-md-1 h3">ID</div>
@@ -34,10 +37,10 @@
 
 <div class="container bg-light">
     <%
-    //                                                          v----RECOGER listado DE SOCIO DEL request
-    List<Socio> listado = (List<Socio>) request.getAttribute("listado");
-    // FOR-EACH SOBRE LA COLECCIÓN DE listado DE SOCIO
-    for (Socio socio: listado) {
+        //                                                          v----RECOGER listado DE SOCIO DEL request
+        List<Socio> listado = (List<Socio>) request.getAttribute("listado");
+        // FOR-EACH SOBRE LA COLECCIÓN DE listado DE SOCIO
+        for (Socio socio: listado) {
     %>
     <div id="<%=socio.getSocioId()%>" class="row mt-2 body">
         <div class="col-md-1 align-self-center"><%=socio.getSocioId() %>
@@ -52,17 +55,45 @@
         </div>
 
         <div class="col-md-2 align-self-center text-center">
-            <form method="get" action="borraSocio.jsp">
+            <!--Es post porque hace el borrar directamente-->
+            <form class="d-inline" method="post" action="BorrarSociosServlet">
                 <input type="hidden" name="codigo" value="<%=socio.getSocioId() %>"/>
                 <input class="btn btn-primary"  type="submit" value="Borrar">
             </form>
+            <!--Es get porque manda a una página intermedia que es la que hace el editar-->
+            <form class="d-inline" method="get" action="EditarSociosServlet">
+                <input type="hidden" name="codigo" value="<%=socio.getSocioId() %>"/>
+                <input class="btn btn-primary"  type="submit" value="Editar">
+            </form>
         </div>
     </div>
-        <%
-      //v--- FIN DEL BUCLE FOR CON HTML INCRUSTADO
-    } // for
+    <%
+            //v--- FIN DEL BUCLE FOR CON HTML INCRUSTADO
+        } // for
     %>
 </div>
+
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script type="text/javascript">
+    $(function (){
+        //IMPLEMENTANDO UN BOTÓN backToTop
+        let btn = $('#backToTop');
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+        btn.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: 0
+            }, '300');
+        });
+    });
+
+</script>
 <%
     Integer newSocioID = (Integer) request.getAttribute("newSocioID");
     if (newSocioID != null) {
@@ -87,7 +118,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery.js" ></script>
 <script type="text/javascript">
     //DINAMISMO CON JQUERY..
     //CUANDO SE CARGA EL DOM JQUERY EJECUTA SOBRE SELECTOR DE CAPA MODAL AL MODAL
@@ -101,23 +131,6 @@
                 scrollTop: $('#<%=newSocioID%>').offset().top
             }, 2000, () => $('#<%=newSocioID%>').addClass('highlight'));
         });
-
-        //IMPLEMENTANDO UN BOTÓN backToTop
-        let btn = $('#backToTop');
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() > 300) {
-                btn.addClass('show');
-            } else {
-                btn.removeClass('show');
-            }
-        });
-        btn.on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate({
-                scrollTop: 0
-            }, '300');
-        });
-
     });
 </script>
 <% } %>

@@ -54,6 +54,8 @@
             </div>
         </form>
     <%
+        } else {
+            System.out.println("ERROR");
         }
     %>
     <%
