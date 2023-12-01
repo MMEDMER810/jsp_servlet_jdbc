@@ -18,7 +18,6 @@
     <%
         Socio socioAEditar = (Socio)request.getAttribute("socioAEditar");
 
-        //Se puede quitar el if porque está montado para que solo se pueda entrar por EditarSociosServlet
         if (socioAEditar != null) {
     %>
         <form method="post" action="EditarSociosServlet">
