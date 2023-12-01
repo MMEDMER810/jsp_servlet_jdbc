@@ -30,19 +30,19 @@
 
             <div class="row body mt-2">
                 <div class="col-md-6 align-self-center">Nombre</div>
-                <div class="col-md-6 align-self-center"><input type="text" name="nombre"/></div>
+                <div class="col-md-6 align-self-center"><input type="text" name="nombre" value="<%=socioAEditar.getNombre()%>"/></div>
             </div>
             <div class="row body mt-2">
                 <div class="col-md-6 align-self-center">Estatura</div>
-                <div class="col-md-6 align-self-center"><input type="text" name="estatura"/></div>
+                <div class="col-md-6 align-self-center"><input type="text" name="estatura" value="<%=socioAEditar.getEstatura()%>"/></div>
             </div>
             <div class="row body mt-2">
                 <div class="col-md-6 align-self-center">Edad</div>
-                <div class="col-md-6 align-self-center"><input type="text" name="edad"/></div>
+                <div class="col-md-6 align-self-center"><input type="text" name="edad" value="<%=socioAEditar.getEdad()%>"/></div>
             </div>
             <div class="row body mt-2">
                 <div class="col-md-6 align-self-center">Localidad</div>
-                <div class="col-md-6 align-self-center"><input type="text" name="localidad"/></div>
+                <div class="col-md-6 align-self-center"><input type="text" name="localidad" value="<%=socioAEditar.getLocalidad()%>"/></div>
             </div>
             <div class="row mt-2">
                 <div class="col-md-6">
