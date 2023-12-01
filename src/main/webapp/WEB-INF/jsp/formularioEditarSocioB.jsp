@@ -24,7 +24,7 @@
         <form method="post" action="EditarSociosServlet">
             <div class="row body mt-2">
                 <div class="col-md-6 align-self-center">Socio ID</div>
-                <div class="col-md-6 align-self-center"><input type="text" name="socioID" value="socioID" disabled/></div><!-- no lo ve el usuario -->
+                <div class="col-md-6 align-self-center"><input type="hidden" name="socioID" value="<%=socioAEditar.getSocioId()%>"/></div>
             </div>
 
 
@@ -55,7 +55,7 @@
         </form>
     <%
         } else {
-            System.out.println("ERROR");
+            System.out.println("SOCIO A EDITAR NULO");
         }
     %>
     <%
