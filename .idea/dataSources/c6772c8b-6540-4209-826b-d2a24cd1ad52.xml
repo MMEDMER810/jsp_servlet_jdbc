@@ -2,16 +2,13 @@
 <dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.49">
     <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
+      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||debian-sys-maint|localhost|ALTER|G
-|root||root|localhost|ALTER|G
+      <Grants>|root||root|localhost|ALTER|G
 |root||user|localhost|ALTER|G
-|root||debian-sys-maint|localhost|ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
 |root||user|localhost|ALTER ROUTINE|G
-|root||debian-sys-maint|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||user|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
@@ -19,71 +16,50 @@
 |root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
 |root||root|localhost|AUDIT_ABORT_EXEMPT|G
 |root||user|localhost|AUDIT_ABORT_EXEMPT|G
-|root||debian-sys-maint|localhost|AUDIT_ADMIN|G
 |root||root|localhost|AUDIT_ADMIN|G
 |root||user|localhost|AUDIT_ADMIN|G
-|root||debian-sys-maint|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||user|localhost|AUTHENTICATION_POLICY_ADMIN|G
-|root||debian-sys-maint|localhost|BACKUP_ADMIN|G
 |root||mysql.session|localhost|BACKUP_ADMIN|G
 |root||root|localhost|BACKUP_ADMIN|G
 |root||user|localhost|BACKUP_ADMIN|G
-|root||debian-sys-maint|localhost|BINLOG_ADMIN|G
 |root||root|localhost|BINLOG_ADMIN|G
 |root||user|localhost|BINLOG_ADMIN|G
-|root||debian-sys-maint|localhost|BINLOG_ENCRYPTION_ADMIN|G
 |root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
 |root||user|localhost|BINLOG_ENCRYPTION_ADMIN|G
-|root||debian-sys-maint|localhost|CLONE_ADMIN|G
 |root||mysql.session|localhost|CLONE_ADMIN|G
 |root||root|localhost|CLONE_ADMIN|G
 |root||user|localhost|CLONE_ADMIN|G
-|root||debian-sys-maint|localhost|CONNECTION_ADMIN|G
 |root||mysql.session|localhost|CONNECTION_ADMIN|G
 |root||root|localhost|CONNECTION_ADMIN|G
 |root||user|localhost|CONNECTION_ADMIN|G
-|root||debian-sys-maint|localhost|CREATE|G
 |root||root|localhost|CREATE|G
 |root||user|localhost|CREATE|G
-|root||debian-sys-maint|localhost|CREATE ROLE|G
 |root||root|localhost|CREATE ROLE|G
 |root||user|localhost|CREATE ROLE|G
-|root||debian-sys-maint|localhost|CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
 |root||user|localhost|CREATE ROUTINE|G
-|root||debian-sys-maint|localhost|CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
 |root||user|localhost|CREATE TABLESPACE|G
-|root||debian-sys-maint|localhost|CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
 |root||user|localhost|CREATE TEMPORARY TABLES|G
-|root||debian-sys-maint|localhost|CREATE USER|G
 |root||root|localhost|CREATE USER|G
 |root||user|localhost|CREATE USER|G
-|root||debian-sys-maint|localhost|CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
 |root||user|localhost|CREATE VIEW|G
-|root||debian-sys-maint|localhost|DELETE|G
 |root||root|localhost|DELETE|G
 |root||user|localhost|DELETE|G
-|root||debian-sys-maint|localhost|DROP|G
 |root||root|localhost|DROP|G
 |root||user|localhost|DROP|G
-|root||debian-sys-maint|localhost|DROP ROLE|G
 |root||root|localhost|DROP ROLE|G
 |root||user|localhost|DROP ROLE|G
-|root||debian-sys-maint|localhost|ENCRYPTION_KEY_ADMIN|G
 |root||root|localhost|ENCRYPTION_KEY_ADMIN|G
 |root||user|localhost|ENCRYPTION_KEY_ADMIN|G
-|root||debian-sys-maint|localhost|EVENT|G
 |root||root|localhost|EVENT|G
 |root||user|localhost|EVENT|G
-|root||debian-sys-maint|localhost|EXECUTE|G
 |root||root|localhost|EXECUTE|G
 |root||user|localhost|EXECUTE|G
-|root||debian-sys-maint|localhost|FILE|G
 |root||root|localhost|FILE|G
 |root||user|localhost|FILE|G
 |root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
@@ -91,140 +67,97 @@
 |root||mysql.sys|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FIREWALL_EXEMPT|G
 |root||user|localhost|FIREWALL_EXEMPT|G
-|root||debian-sys-maint|localhost|FLUSH_OPTIMIZER_COSTS|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
 |root||user|localhost|FLUSH_OPTIMIZER_COSTS|G
-|root||debian-sys-maint|localhost|FLUSH_STATUS|G
 |root||root|localhost|FLUSH_STATUS|G
 |root||user|localhost|FLUSH_STATUS|G
-|root||debian-sys-maint|localhost|FLUSH_TABLES|G
 |root||root|localhost|FLUSH_TABLES|G
 |root||user|localhost|FLUSH_TABLES|G
-|root||debian-sys-maint|localhost|FLUSH_USER_RESOURCES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
 |root||user|localhost|FLUSH_USER_RESOURCES|G
-|root||debian-sys-maint|localhost|GROUP_REPLICATION_ADMIN|G
 |root||root|localhost|GROUP_REPLICATION_ADMIN|G
 |root||user|localhost|GROUP_REPLICATION_ADMIN|G
-|root||debian-sys-maint|localhost|GROUP_REPLICATION_STREAM|G
 |root||root|localhost|GROUP_REPLICATION_STREAM|G
 |root||user|localhost|GROUP_REPLICATION_STREAM|G
-|root||debian-sys-maint|localhost|INDEX|G
 |root||root|localhost|INDEX|G
 |root||user|localhost|INDEX|G
-|root||debian-sys-maint|localhost|INNODB_REDO_LOG_ARCHIVE|G
 |root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
 |root||user|localhost|INNODB_REDO_LOG_ARCHIVE|G
-|root||debian-sys-maint|localhost|INNODB_REDO_LOG_ENABLE|G
 |root||root|localhost|INNODB_REDO_LOG_ENABLE|G
 |root||user|localhost|INNODB_REDO_LOG_ENABLE|G
-|root||debian-sys-maint|localhost|INSERT|G
 |root||root|localhost|INSERT|G
 |root||user|localhost|INSERT|G
-|root||debian-sys-maint|localhost|LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
 |root||user|localhost|LOCK TABLES|G
-|root||debian-sys-maint|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||root|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||user|localhost|PASSWORDLESS_USER_ADMIN|G
-|root||debian-sys-maint|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||user|localhost|PERSIST_RO_VARIABLES_ADMIN|G
-|root||debian-sys-maint|localhost|PROCESS|G
 |root||root|localhost|PROCESS|G
 |root||user|localhost|PROCESS|G
-|root||debian-sys-maint|localhost|REFERENCES|G
 |root||root|localhost|REFERENCES|G
 |root||user|localhost|REFERENCES|G
-|root||debian-sys-maint|localhost|RELOAD|G
 |root||root|localhost|RELOAD|G
 |root||user|localhost|RELOAD|G
-|root||debian-sys-maint|localhost|REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
 |root||user|localhost|REPLICATION CLIENT|G
-|root||debian-sys-maint|localhost|REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
 |root||user|localhost|REPLICATION SLAVE|G
-|root||debian-sys-maint|localhost|REPLICATION_APPLIER|G
 |root||root|localhost|REPLICATION_APPLIER|G
 |root||user|localhost|REPLICATION_APPLIER|G
-|root||debian-sys-maint|localhost|REPLICATION_SLAVE_ADMIN|G
 |root||root|localhost|REPLICATION_SLAVE_ADMIN|G
 |root||user|localhost|REPLICATION_SLAVE_ADMIN|G
-|root||debian-sys-maint|localhost|RESOURCE_GROUP_ADMIN|G
 |root||root|localhost|RESOURCE_GROUP_ADMIN|G
 |root||user|localhost|RESOURCE_GROUP_ADMIN|G
-|root||debian-sys-maint|localhost|RESOURCE_GROUP_USER|G
 |root||root|localhost|RESOURCE_GROUP_USER|G
 |root||user|localhost|RESOURCE_GROUP_USER|G
-|root||debian-sys-maint|localhost|ROLE_ADMIN|G
 |root||root|localhost|ROLE_ADMIN|G
 |root||user|localhost|ROLE_ADMIN|G
-|root||debian-sys-maint|localhost|SELECT|G
 |root||mysql.infoschema|localhost|SELECT|G
 |root||root|localhost|SELECT|G
 |root||user|localhost|SELECT|G
-|root||debian-sys-maint|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||user|localhost|SENSITIVE_VARIABLES_OBSERVER|G
-|root||debian-sys-maint|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||user|localhost|SERVICE_CONNECTION_ADMIN|G
-|root||debian-sys-maint|localhost|SESSION_VARIABLES_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
 |root||user|localhost|SESSION_VARIABLES_ADMIN|G
-|root||debian-sys-maint|localhost|SET_USER_ID|G
 |root||root|localhost|SET_USER_ID|G
 |root||user|localhost|SET_USER_ID|G
-|root||debian-sys-maint|localhost|SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
 |root||user|localhost|SHOW DATABASES|G
-|root||debian-sys-maint|localhost|SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
 |root||user|localhost|SHOW VIEW|G
-|root||debian-sys-maint|localhost|SHOW_ROUTINE|G
 |root||root|localhost|SHOW_ROUTINE|G
 |root||user|localhost|SHOW_ROUTINE|G
-|root||debian-sys-maint|localhost|SHUTDOWN|G
 |root||mysql.session|localhost|SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
 |root||user|localhost|SHUTDOWN|G
-|root||debian-sys-maint|localhost|SUPER|G
 |root||mysql.session|localhost|SUPER|G
 |root||root|localhost|SUPER|G
 |root||user|localhost|SUPER|G
-|root||debian-sys-maint|localhost|SYSTEM_USER|G
 |root||mysql.infoschema|localhost|SYSTEM_USER|G
 |root||mysql.session|localhost|SYSTEM_USER|G
 |root||mysql.sys|localhost|SYSTEM_USER|G
 |root||root|localhost|SYSTEM_USER|G
 |root||user|localhost|SYSTEM_USER|G
-|root||debian-sys-maint|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||user|localhost|SYSTEM_VARIABLES_ADMIN|G
-|root||debian-sys-maint|localhost|TABLE_ENCRYPTION_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
 |root||user|localhost|TABLE_ENCRYPTION_ADMIN|G
-|root||debian-sys-maint|localhost|TELEMETRY_LOG_ADMIN|G
-|root||root|localhost|TELEMETRY_LOG_ADMIN|G
-|root||user|localhost|TELEMETRY_LOG_ADMIN|G
-|root||debian-sys-maint|localhost|TRIGGER|G
 |root||root|localhost|TRIGGER|G
 |root||user|localhost|TRIGGER|G
-|root||debian-sys-maint|localhost|UPDATE|G
 |root||root|localhost|UPDATE|G
 |root||user|localhost|UPDATE|G
-|root||debian-sys-maint|localhost|XA_RECOVER_ADMIN|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
 |root||user|localhost|XA_RECOVER_ADMIN|G
-|root||debian-sys-maint|localhost|grant option|G
 |root||root|localhost|grant option|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.0.35</ServerVersion>
+      <ServerVersion>8.0.32</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
@@ -1144,69 +1077,92 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb3_bin</CollationName>
     </schema>
     <schema id="294" parent="1" name="baloncesto_servlet">
-      <IntrospectionTimestamp>2023-11-29.10:47:15</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-29.08:47:15</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-30.14:42:42</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-30.12:42:42</LocalIntrospectionTimestamp>
       <CollationName>utf8mb3_bin</CollationName>
     </schema>
-    <user id="295" parent="1" name="debian-sys-maint">
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="296" parent="1" name="mysql.infoschema">
+    <schema id="295" parent="1" name="sakila">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="296" parent="1" name="jardineria">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="297" parent="1" name="facturacion">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="298" parent="1" name="prueba">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="299" parent="1" name="libreria">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="300" parent="1" name="norauto">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="301" parent="1" name="pruebas">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="302" parent="1" name="tokio_2020">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="303" parent="1" name="facturas">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="304" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="mysql.session">
+    <user id="305" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="298" parent="1" name="mysql.sys">
+    <user id="306" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="299" parent="1" name="root">
-      <Host>localhost</Host>
-      <Plugin>auth_socket</Plugin>
-    </user>
-    <user id="300" parent="1" name="user">
+    <user id="307" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="301" parent="294" name="socio">
+    <user id="308" parent="1" name="user">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <table id="309" parent="294" name="socio">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_spanish2_ci</CollationName>
     </table>
-    <column id="302" parent="301" name="socioID">
+    <column id="310" parent="309" name="socioID">
       <AutoIncrement>1303</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="303" parent="301" name="nombre">
+    <column id="311" parent="309" name="nombre">
       <DasType>varchar(40)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="304" parent="301" name="estatura">
+    <column id="312" parent="309" name="estatura">
       <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="305" parent="301" name="edad">
+    <column id="313" parent="309" name="edad">
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="306" parent="301" name="localidad">
+    <column id="314" parent="309" name="localidad">
       <DasType>varchar(30)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="307" parent="301" name="PRIMARY">
+    <index id="315" parent="309" name="PRIMARY">
       <ColNames>socioID</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="308" parent="301" name="PRIMARY">
+    <key id="316" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

@@ -10,6 +10,7 @@ public class UtilServlet {
 
     public static Optional<Socio> validaEditar(HttpServletRequest request) {
 
+        //Valida el socio pero sin ID
         Optional<Socio> optionalSocio = UtilServlet.validaGrabar(request);
 
         if (optionalSocio.isPresent()) {
@@ -17,6 +18,7 @@ public class UtilServlet {
             Socio socio = optionalSocio.get();
 
             try {
+                //Le settea al socio su ID
                 socio.setSocioId(Integer.parseInt(request.getParameter("socioID")));
                 return optionalSocio;
             } catch (Exception ex) {

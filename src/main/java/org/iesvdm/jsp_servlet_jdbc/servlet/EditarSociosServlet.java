@@ -53,18 +53,23 @@ public class EditarSociosServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = null;
 
+        //Validar socio
         Optional<Socio> optionalSocio = UtilServlet.validaEditar(request);
 
         if (optionalSocio.isPresent()) {
+            //Recoger el socio y actualizarlo
             Socio socio = optionalSocio.get();
-            socio.setSocioId(Integer.parseInt(request.getParameter("socioID")));
 
             this.socioDAO.update(socio);
 
+            //Lista de todos los socios con el socio actualizado
             List<Socio> listado = this.socioDAO.getAll();
-
             request.setAttribute("listado", listado);
 
+            //editSocioID para hacerle estilos después al socio editado
+            request.setAttribute("editSocioID", socio.getSocioId() );
+
+            //Redirección interna del servidor
             dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/listadoSociosB.jsp");
 
         } else {
@@ -72,6 +77,7 @@ public class EditarSociosServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/formularioEditarSocioB.jsp");
         }
 
+        //Hacer efectiva la redirección
         dispatcher.forward(request, response);
 
     }

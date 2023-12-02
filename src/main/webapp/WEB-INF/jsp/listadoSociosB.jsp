@@ -92,8 +92,9 @@
             }, '300');
         });
     });
-
 </script>
+
+<!-- Estilos para NUEVO SOCIO GRABADO -->
 <%
     Integer newSocioID = (Integer) request.getAttribute("newSocioID");
     if (newSocioID != null) {
@@ -134,6 +135,52 @@
     });
 </script>
 <% } %>
+
+<!-- ESTILOS PARA SOCIO EDITADO -->
+<%
+    Integer editSocioID = (Integer) request.getAttribute("editSocioID");
+    if (editSocioID != null) {
+%>
+
+<div class="modal fade" id="editSocioIDModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Grabar Socio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Editado correctamente socio con ID <%=editSocioID%>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close" data-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //DINAMISMO CON JQUERY..
+    //CUANDO SE CARGA EL DOM JQUERY EJECUTA SOBRE SELECTOR DE CAPA MODAL AL MODAL
+    $(function (){
+        $('#editSocioIDModal').modal('show');
+        $('#editSocioIDModal').on('click', 'button.close', function (eventObject) {
+            $('#editSocioIDModal').modal('hide');
+
+            //PARA HACER SMOOTH SCROLL AL ELEMENTO NUEVO ELEMENTO EN LA PÁGINA
+            $('html, body').animate({
+                scrollTop: $('#<%=editSocioID%>').offset().top -100
+            }, 2000, () => $('#<%=editSocioID%>').addClass('highlight'));
+        });
+    });
+</script>
+<% } %>
+
+
+
+
 <script type="text/javascript" src="js/bootstrap.bundle.js" ></script>
 </body>
 </html>

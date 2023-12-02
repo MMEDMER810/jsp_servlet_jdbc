@@ -25,13 +25,17 @@ public class BorrarSociosServlet extends HttpServlet {
         RequestDispatcher dispatcher = null;
 
         try {
+            //Recoger el id del socio
             int socioID = Integer.parseInt(request.getParameter("codigo"));
 
+            //Borra el socio que tiene ese ID
             this.socioDAO.delete(socioID);
 
+            //Listado actualizado con el socio borrado
             List<Socio> listado = this.socioDAO.getAll();
             request.setAttribute("listado", listado);
 
+            //Redirección interna del servidor
             dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/listadoSociosB.jsp");
 
         } catch (Exception e) {
@@ -40,6 +44,7 @@ public class BorrarSociosServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/listadoSociosB.jsp");
         }
 
+        //Hacer efectiva la redirección
         dispatcher.forward(request, response);
     }
 }
